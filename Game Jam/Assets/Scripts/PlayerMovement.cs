@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Enemy") {
+        if (other.gameObject.tag.Contains("Enemy")) {
             EnemyScript enermyscript = other.gameObject.GetComponent(typeof(EnemyScript)) as EnemyScript;
 
             if (enermyscript != null) {

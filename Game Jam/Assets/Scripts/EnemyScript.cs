@@ -11,8 +11,8 @@ public class EnemyScript : MonoBehaviour
     public int damage;
 
     private void Awake() {
-        rb = gameObject.GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
-        playerTransform = GameObject.Find("player").GetComponent(typeof(Transform)) as Transform;
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        playerTransform = GameObject.Find("player").GetComponent<Transform>();
     }
 
     private void FixedUpdate() {

@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
     public int speed;
     private Rigidbody2D rb;
     public int damage;
+    public int health;
 
     private void Awake() {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -33,4 +34,10 @@ public class EnemyScript : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
         }
     }   
+
+    private void Update() {
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public int speed;
-    public int playerLight;
+    public double playerLight;
+    public int maxPlayerLight;
+    public int fireflys;
+    public int souls;
     private Rigidbody2D rb;
 
     private void Awake() {
@@ -15,6 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate() {
         float direction = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(direction * speed, rb.velocity.y);
+    }
+
+    private void Update() {
+        if (playerLight > maxPlayerLight) {
+            playerLight = maxPlayerLight;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
